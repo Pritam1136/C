@@ -36,13 +36,14 @@ int main() {
         fflush(stdout);
         if (scanf("%d", &guess) != 1 || guess < 1 || guess > 6) {
             printf("Invalid input. Please enter a number between 1 and 6.\n");
-            continue;
+            break;
         }
 
         dice = roll_dice(); // Roll the dice
         printf("The dice rolled: %d\n", dice);
 
         if (guess == dice) { // Player wins
+            sleep(2);
             printf("Congratulations! You guessed correctly!\n");
             balance += bet * 3; // Triple the bet as a reward
         } else { // Player loses
